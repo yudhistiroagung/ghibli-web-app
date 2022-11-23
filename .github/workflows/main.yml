@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: 14
 
-      - name: Install Vire
+      - name: Install Vite
         run: npm install --global vite
 
       - name: Install Deps
