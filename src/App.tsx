@@ -75,20 +75,20 @@ export default function App() {
           />
         </header>
 
-        <section className="grid grid-cols-4 gap-4">
+        <section className="grid xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 auto-col px-2">
           {!!displayedMovies.length &&
             displayedMovies.map((movie: Movie) => {
               return (
                 <div
                   key={`${movie.id}`}
-                  className="flex flex-col-reverse h-72 rounded-lg bg-white relative overflow-clip"
+                  className="flex flex-col-reverse h-96 md:h-72 rounded-lg bg-white relative overflow-clip"
                 >
                   <img
-                    className="h-72 w-full absolute object-cover"
+                    className="h-96 md:h-72 w-full absolute object-cover"
                     src={movie.image}
                     alt={movie.title}
                   />
-                  <div className="flex flex-col-reverse h-36 p-4 w-full z-0 bg-gradient-to-t from-black to-transparent">
+                  <div className="flex flex-col-reverse h-52 md:h-36 p-4 w-full z-0 bg-gradient-to-t from-black to-transparent">
                     <p className="text-white text-sm">{movie.original_title}</p>
                     <p className="text-white text-lg font-bold font-sans">
                       {movie.title}
