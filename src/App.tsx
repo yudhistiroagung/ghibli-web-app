@@ -66,11 +66,11 @@ export default function App() {
 
   return (
     <div className="w-full flex h-screen">
-      <div className="container mx-auto">
+      <div className="container mx-auto relative">
         <header className="flex flex-row sticky top-0 z-30 w-full px-2 py-4 bg-black justify-center shadow-xl">
           <input
             onChange={searchChanged}
-            className="px-2 py-2 rounded-lg w-4/12"
+            className="px-2 py-2 rounded-lg w-full md:w-4/12"
             placeholder="Search movie..."
           />
         </header>
@@ -88,7 +88,10 @@ export default function App() {
                     src={movie.image}
                     alt={movie.title}
                   />
-                  <div className="flex flex-col-reverse h-52 md:h-36 p-4 w-full z-0 bg-gradient-to-t from-black to-transparent">
+                  <p className="absolute text-md text-yellow-300 font-semibold top-0 right-0 m-2">
+                    {`★ ${parseInt(movie.rt_score, 10) / 10}`}
+                  </p>
+                  <div className="flex flex-col-reverse h-52 justify-center md:h-36 p-4 w-full z-0 bg-gradient-to-t from-black to-transparent">
                     <p className="text-white text-sm">{movie.original_title}</p>
                     <p className="text-white text-lg font-bold font-sans">
                       {movie.title}
